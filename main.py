@@ -1,5 +1,5 @@
 import platform, time, os, re, json
-from os import environ
+
 s = platform.python_version()
 print("Mодуль написал Люцифер Денница")
 time.sleep(2)
@@ -18,7 +18,7 @@ print("""
 1 -> Termux
 2 -> Linux
 """)
-l = input('Напиши цифру правильного варианта')
+l = input('Напиши цифру правильного варианта: ')
 
 if str(l) == '1':
     print("Блять, ебаный термукс, как же я тебя нахуй ненавижу")
@@ -38,7 +38,7 @@ if str(l) == '1':
     time.sleep(2)
     print("Устанавливаю модули")
     time.sleep(2)
-    os.system(f'env/bin/{python} -m pip install -r requirements.txt')
+    os.system(f'{python} -m pip install -r requirements.txt')
     os.system(f'{python} -m pip install requests')
     import requests
 
@@ -91,11 +91,8 @@ if str(l) == '1':
     print("Установил секретный код")
     if str(python) == "python3.9":
         os.system(f'{python} -m pip uninstall loguru')
-        print(
-            f"Для запуска тебе надо прописать:\ncd {dir_lp}\nnohup env/bin/{python} main.py &\nОбязательно запомни номер процесса что бы потом остановить\nОстанавливать скрипт надо командой kill (Номер процесса без скобок)\nТак же пропиши команду: rm -r nohup.out для стабильной работы")
-
-    print(
-        f"Для запуска тебе надо прописать:\ncd {dir_lp}\nnohup env/bin/{python} main.py &\nОбязательно запомни номер процесса что бы потом остановить\nОстанавливать скрипт надо командой kill (Номер процесса без скобок)\nТак же пропиши команду: rm -r nohup.out для стабильной работы")
+        print(f"Для запуска тебе надо прописать:\ncd {dir_lp}\npython main.py")
+    print(f"Для запуска тебе надо прописать:\ncd {dir_lp}\npython main.py ")
 
 elif str(l) == '2':
     print("Ну с линуксом ща намутим")
