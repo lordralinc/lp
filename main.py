@@ -38,8 +38,8 @@ if str(l) == '1':
     time.sleep(2)
     print("Устанавливаю модули")
     time.sleep(2)
-    os.system(f'{python} -m pip install -r requirements.txt')
-    os.system(f'{python} -m pip install requests')
+    os.system('pip install -r requirements.txt')
+    os.system('pip install requests')
     import requests
 
     login = input("Введите логин от вк: ")
@@ -90,7 +90,7 @@ if str(l) == '1':
         f.write(json.dumps(config_file, ensure_ascii=True, indent=2))
     print("Установил секретный код")
     if str(python) == "python3.9":
-        os.system(f'{python} -m pip uninstall loguru')
+        os.system(f'pip uninstall loguru')
         print(f"Для запуска тебе надо прописать:\ncd {dir_lp}\npython main.py")
     print(f"Для запуска тебе надо прописать:\ncd {dir_lp}\npython main.py ")
 
