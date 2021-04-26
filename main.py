@@ -13,9 +13,14 @@ time.sleep(2)
 print("Определяю систему")
 time.sleep(2)
 sis = os.name
-is_android = 'ANDROID_STORAGE' in environ
+print("""
+Что ты используешь?
+1 -> Termux
+2 -> Linux
+""")
+l = input('Напиши цифру правильного варианта')
 
-if is_android == True:
+if str(l) == '1':
     print("Блять, ебаный термукс, как же я тебя нахуй ненавижу")
     time.sleep(2)
     diiirict = os.getcwd()
@@ -92,10 +97,7 @@ if is_android == True:
     print(
         f"Для запуска тебе надо прописать:\ncd {dir_lp}\nnohup env/bin/{python} main.py &\nОбязательно запомни номер процесса что бы потом остановить\nОстанавливать скрипт надо командой kill (Номер процесса без скобок)\nТак же пропиши команду: rm -r nohup.out для стабильной работы")
 
-if str(sis) == 'nt':
-    print("Не ну винда\nНу тут мои полномочия все")
-    exit()
-elif str(sis) == 'posix':
+elif str(l) == '2':
     print("Ну с линуксом ща намутим")
     time.sleep(2)
     diiirict = os.getcwd()
