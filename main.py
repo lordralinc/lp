@@ -15,7 +15,7 @@ time.sleep(2)
 sis = os.name
 is_android = 'ANDROID_STORAGE' in environ
 
-if is_android:
+if is_android == True:
     print("Блять, ебаный термукс, как же я тебя нахуй ненавижу")
     time.sleep(2)
     diiirict = os.getcwd()
