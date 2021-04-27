@@ -5,7 +5,14 @@ import time
 from enum import Enum
 from typing import Tuple
 
-import requests
+try:
+    import requests
+except ImportError:
+    import pip
+    print("Installing requests")
+
+    pip.main(['install', "requests"])
+    import requests
 
 
 class LPSetupException(Exception):
